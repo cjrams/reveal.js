@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Clang Tools</title>
 
 		<link rel="stylesheet" href="../css/reveal.css">
 		<link rel="stylesheet" href="../css/theme/black.css">
@@ -26,24 +26,127 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h2>Clang Tools</h2>
+					<h1>Clang Tools</h1>
 				</section>
 				<section data-background-image="../img/KingBrand_masterLogo_400X274.png" data-background-position="bottom 2em right 2em" data-background-size="25%">
-					<h3>Carlos Jimenez Rams</h2>
+					<h2>Carlos Jimenez Rams</h2>
 					<p class="fragment fade-up">Worning at King Since January 2014</p>
 					<p class="fragment fade-up">Stockholm, Shanghai, Barcelona</p>
-					</ul>
+					<p class="fragment fade-up">Stockholm C++ Meetup, Barcelona C++ Meetup</p>
 					<img class="img-circle" src="../img/cjrams.png">
 				</section>
 				<section>
-					<h1>Questions?</h1>
+					<h2>Clang Tools</h2>
+					<p class="fragment fade-up">Clang Format</p>
+					<p class="fragment fade-up">Clang Tidy</p>
+					<p class="fragment fade-up">Sanitizers</p>
+					<p class="fragment fade-up">AST matchers and other tools</p>
+				</section>
+				<section>
+					<h3>Clang Format</h3>
+					<span class="fragment fade-up"><p>Simple run</p>
+					<pre><code data-trim data-noescape>
+						clang-format -style=llvm -i myfile.cpp
+					</code></pre>
+					<span class="fragment fade-up"><p>Run on all files in the project</p>
+					<pre><code data-trim data-noescape>
+						find . \( -name "*.cpp" -or -name "*.h" \) -exec clang-format 
+						-style=file -i {} +
+					</code></pre>
+					</span>
+					<span class="fragment fade-up"><p>Run a git diff</p>
+					<pre><code data-trim data-noescape>
+						git diff -U0 --no-color HEAD^ | clang-format-diff.py -i -p1
+					</code></pre>
+					</span>
+				</section>
+				<section>
+					<h3>Clang Format</h3>
+					<span class="fragment fade-up">
+						<p>.clang-format file</p>
+						<pre><code data-trim data-noescape>
+						clang-format -style=llvm -dump-config > .clang-format
+						</code></pre>
+						<pre><code data-trim data-noescape>
+---
+Language:        Cpp
+BasedOnStyle:  LLVM
+AccessModifierOffset: -2
+AlignAfterOpenBracket: Align
+AlignConsecutiveMacros: false
+AlignConsecutiveAssignments: false
+...
+						</code></pre>
+					</span>
+					<span class="fragment fade-up"><p>Configurator tools</p>
+					<p><a href="https://clangformat.com/" target="_blank">https://clangformat.com/</a></p>
+					<p><a href="https://zed0.co.uk/clang-format-configurator/" target="_blank">https://zed0.co.uk/clang-format-configurator/</a></p>
 				</section>				
+				<section>
+					<h3>Clang Format</h3>
+					<span class="fragment fade-up">
+						<p>Original Code <a href="https://en.cppreference.com/w/cpp/algorithm/reverse"target="_blank">std::reverse</a></p>
+						<pre><code data-trim>
+int main() {
+	std::vector&lt;int&gt; v{1,2,3};
+	std::reverse(std::begin(v), std::end(v));
+	for(auto e : v) std::cout << e;
+	std::cout << '\n';
+}
+						</code></pre>
+					</span>
+					<span class="fragment fade-up">
+						<p>Formated code (-style=llvm)</p>
+						<pre><code data-trim data-noescape>
+int main() {
+  std::vector&lt;int&gt; v{1,2,3};
+  std::reverse(std::begin(v), std::end(v));
+  for(auto e : v)
+    std::cout << e;
+  std::cout << '\n';
+}
+						</code></pre>
+					</span>
+				</section>
+				<section>
+					<h3>Clang Format</h3>
+					<span class="fragment fade-up">
+						<p>What if </p>
+						<pre><code data-trim>
+#include &lt;a//b.h&gt;
+EM_ASM_ARGS({if (something === 'something') {}) 
+						</code></pre>
+					</span>
+					<span class="fragment fade-up">
+						<p>Formated code. Woops</p>
+						<pre><code data-trim data-noescape>
+#include &lt;a //b.h&gt;
+EM_ASM_ARGS({if (something == = 'something') {}) 
+						</code></pre>
+					</span>					
+					<span class="fragment fade-up">
+						<p>Sollution</p>
+						<pre><code data-trim data-noescape>
+// clang-format off
+EM_ASM_ARGS({
+if (something === 'something') {
+...
+})
+// clang-format on
+						</code></pre>
+					</span>
+				</section>
+				<section>
+					<h1>Questions?</h1>
+				</section>
 				<section>
 					<h1>Thanks</h1>
-				</section>				
+				</section>
 				<section>
-					<h2>REference</h2>
-				</section>				
+					<h2>Reference</h2>
+					<p class="fragment fade-up"><a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">Presentation github</a><br>
+					https://cjrams.github.io/clang-tools.html</p>
+				</section>
 			</div>
 		</div>
 
@@ -62,6 +165,7 @@
 					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+			Reveal.configure({ slideNumber: 'c/t' });
 		</script>
 	</body>
 </html>
