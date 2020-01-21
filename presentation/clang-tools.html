@@ -40,6 +40,7 @@
 					<p class="fragment fade-up"><a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">Presentation github</a><br>
 					https://cjrams.github.io/clang-tools.html<br>
 					Also on the meetup group 🤞</p>
+					<p class="fragment fade-up">Please, find the typos, and <a href="https://github.com/cjrams/cjrams.github.io/blob/master/presentations/presentation/clang-tools.html" target="_blank">contribute</a></p>
 				</section>
 				<section>
 					<h2>Clang Tools</h2>
@@ -153,6 +154,31 @@ if (something === 'something') {
 				</section>
 				<section>
 					<h3>Clang Tidy</h3>
+					<p class="fragment fade-up">Linter tool</p>
+					<span class="fragment fade-up"><p>Static analizer <span class="fragment fade-up">😅</span> <span class="fragment fade-up">also, some with <br><pre class="fragment fade-up"><code data-trim data-noescape>clang-analyzer-*</span></code></pre></p></span>
+					<p class="fragment fade-up">Best practices</p>
+					<span class="fragment fade-up"><p>Including cpp gidelines with <br><pre class="fragment fade-up"><code data-trim data-noescape>cppcoreguidelines-*</code></pre></p></span>
+				</section>
+				<section>
+					<h3>Clang Tidy</h3>
+					<p class="fragment fade-up">How to use it<pre class="fragment fade-up"><code data-trim data-noescape>
+					clang-tidy test.cpp -- -Imy_project/include -DMY_DEFINES ...
+					</code></pre>
+					<br><span class="fragment fade-up">Just some checks
+					<pre class="fragment fade-up"><code data-trim data-noescape>
+					clang-tidy test.cpp -checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus*
+					</code></pre></span></p>
+					<p class="fragment fade-up">Plus compilation library</p>
+				</section>
+				<section>
+					<h3>Clang Tidy</h3>
+					<span class="fragment fade-up"><p>Cmake to the rescue (Version 3.7.2+)<br><pre class="fragment fade-up"><code data-trim data-noescape>set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=*")</code></pre></p></span>
+ 				</section>
+				<section>
+					<h3>Clang Tidy</h3>
+				</section>
+				<section>
+					<h3>Clang Tidy</h3>
 				</section>
 				<section>
 					<h2>Clang Tools</h2>
@@ -174,7 +200,10 @@ if (something === 'something') {
 					<p>Automate it & CI</p>
 				</section>
 				<section>
-					<h3>AST matchers and other tools</h3>
+					<h3>AST matchers</h3>
+				</section>
+				<section>
+					<h3>Other tools</h3>
 				</section>
 				<section>
 					<h2>Clang Tools</h2>
@@ -186,7 +215,6 @@ if (something === 'something') {
 				</section>
 				<section>
 					<h3>Automate it & CI</h3>
-
 				</section>
 				<section>
 					<h1>Thanks</h1>
@@ -201,6 +229,7 @@ if (something === 'something') {
 					<h2>Reference</h2>
 					<p class="fragment fade-up"><a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">Presentation github</a><br>
 					https://cjrams.github.io/clang-tools.html</p>
+					<p class="fragment fade-up">Please, find the typos, and <a href="https://github.com/cjrams/cjrams.github.io/blob/master/presentations/presentation/clang-tools.html" target="_blank">contribute</a></p>
 				</section>
 			</div>
 		</div>
