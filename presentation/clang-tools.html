@@ -37,24 +37,31 @@
 				</section>
 				<section>
 					<h2>Clang Tools</h2>
-					<p class="fragment fade-up">Clang Format</p>
-					<p class="fragment fade-up">Clang Tidy</p>
-					<p class="fragment fade-up">Sanitizers</p>
-					<p class="fragment fade-up">AST matchers and other tools</p>
+					<p class="fragment fade-up"><a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">Presentation github</a><br>
+					https://cjrams.github.io/clang-tools.html<br>
+					Also on the meetup group 🤞</p>
+				</section>
+				<section>
+					<h2>Clang Tools</h2>
+					<p class="fragment fade-up" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="6">Clang Format<span></p>
+					<p class="fragment fade-up" data-fragment-index="2">Clang Tidy</p>
+					<p class="fragment fade-up" data-fragment-index="3">Sanitizers</p>
+					<p class="fragment fade-up" data-fragment-index="4">AST matchers and other tools</p>
+					<p class="fragment fade-up" data-fragment-index="5">Automate it & CI</p>
 				</section>
 				<section>
 					<h3>Clang Format</h3>
-					<span class="fragment fade-up"><p>Simple run</p>
+					<span class="fragment fade-up"><p>Simple run (Using LLVM style)</p>
 					<pre><code data-trim data-noescape>
 						clang-format -style=llvm -i myfile.cpp
 					</code></pre>
-					<span class="fragment fade-up"><p>Run on all files in the project</p>
+					<span class="fragment fade-up"><p>Run on all files in the project (Using .clang-format file)</p>
 					<pre><code data-trim data-noescape>
 						find . \( -name "*.cpp" -or -name "*.h" \) -exec clang-format 
 						-style=file -i {} +
 					</code></pre>
 					</span>
-					<span class="fragment fade-up"><p>Run a git diff</p>
+					<span class="fragment fade-up"><p>Run a git diff (Clang tools missing)</p>
 					<pre><code data-trim data-noescape>
 						git diff -U0 --no-color HEAD^ | clang-format-diff.py -i -p1
 					</code></pre>
@@ -135,6 +142,54 @@ if (something === 'something') {
 // clang-format on
 						</code></pre>
 					</span>
+				</section>
+				<section>
+					<h2>Clang Tools</h2>
+					<p>Clang Format</p>
+					<p style="color: #17ff2e;">Clang Tidy</p>
+					<p>Sanitizers</p>
+					<p>AST matchers and other tools</p>
+					<p>Automate it & CI</p>
+				</section>
+				<section>
+					<h3>Clang Tidy</h3>
+				</section>
+				<section>
+					<h2>Clang Tools</h2>
+					<p>Clang Format</p>
+					<p>Clang Tidy</p>
+					<p style="color: #17ff2e;">Sanitizers</p>
+					<p>AST matchers and other tools</p>
+					<p>Automate it & CI</p>
+				</section>
+				<section>
+					<h3>Sanitizers</h3>
+				</section>
+				<section>
+					<h2>Clang Tools</h2>
+					<p>Clang Format</p>
+					<p>Clang Tidy</p>
+					<p>Sanitizers</p>
+					<p style="color: #17ff2e;">AST matchers and other tools</p>
+					<p>Automate it & CI</p>
+				</section>
+				<section>
+					<h3>AST matchers and other tools</h3>
+				</section>
+				<section>
+					<h2>Clang Tools</h2>
+					<p>Clang Format</p>
+					<p>Clang Tidy</p>
+					<p>Sanitizers</p>
+					<p>AST matchers and other tools</p>
+					<p style="color: #17ff2e;">Automate it & CI</p>
+				</section>
+				<section>
+					<h3>Automate it & CI</h3>
+
+				</section>
+				<section>
+					<h1>Thanks</h1>
 				</section>
 				<section>
 					<h1>Questions?</h1>
