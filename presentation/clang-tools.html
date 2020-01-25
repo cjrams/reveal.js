@@ -190,6 +190,51 @@ if (something === 'something') {
 				</section>
 				<section>
 					<h3>Sanitizers</h3>
+					<p>Sanitizers are not properly tools</p>
+					<p>Embedded with the compiler</p>
+					<p>Run dynamic analisys</p>
+					<p>Perfect to run with Unit tests on CI<p>
+				</section>	
+				<section>
+					<h3>Sanitizers</h3>
+					<h4>Address sanitizer</h4>
+					<p>Typical slowdown introduced is 2x.</p>
+					<pre><code data-trim data-noescape>
+						clang++ -O1 -g -fsanitize=address -fno-omit-frame-pointer
+						example.cpp
+					</code></pre>
+					<pre><code data-trim data-noescape>
+int main(int argc, char **argv) {
+  int *array = new int[100];
+  delete [] array;
+  return array[argc];  // BOOM
+}
+					</code></pre>
+				</section>
+				<section>
+					<h3>Sanitizers</h3>
+					<h4>Thread sanitizer</h4>
+					<p>Typical slowdown introduced is about 5x-15x</p>
+					<p>Typical memory overhead introduced is about 5x-10x</p>
+					<pre><code data-trim data-noescape>
+						clang -fsanitize=thread -g -O1 tiny_race.c
+					</code></pre>
+					<h4>Memory sanitizer</h4>
+					<p>Typical slowdown introduced is 3x.</p>
+					<pre><code data-trim data-noescape>
+						clang -fsanitize=memory -fno-omit-frame-pointer -g -O2 umr.cc
+					</code></pre>
+				</section>
+				<section>
+					<h3>Sanitizers</h3>
+					<h4>Undefined Behaviour sanitizer</h4>
+					<p>UndefinedBehaviorSanitizer (UBSan) is a fast undefined behavior detector</p>
+					<p>UBSan has an optional run-time library which provides better error reporting</p>
+					<pre><code data-trim data-noescape>
+						clang++ -fsanitize=undefined test.cc
+					</code></pre>
+					<h4>Data Flow sanitizer</h4>
+					<p>Unlike other Sanitizer tools, this tool is not designed to detect a specific class of bugs on its own</p>
 				</section>
 				<section>
 					<h2>Clang Tools</h2>
@@ -247,9 +292,20 @@ if (something === 'something') {
 					{ src: '../plugin/markdown/markdown.js' },
 					{ src: '../plugin/notes/notes.js', async: true },
 					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				],
+				keyboard: true,
 			});
-			Reveal.configure({ slideNumber: 'c/t' });
+			Reveal.configure({ 
+				slideNumber: 'c/t',
+				keyboard: {
+					48: slide( 0 ),
+					49: slide( 5 ),
+					50: slide( 17 ),
+					51: slide( 28 ),
+					52: slide( 29 ),
+					56: slide( 30 ),
+				}
+			}); 
 		</script>
 	</body>
 </html>
