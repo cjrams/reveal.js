@@ -44,6 +44,15 @@
 				</section>
 				<section>
 					<h2>Clang Tools</h2>
+					<h4 class="fragment fade-up">Disclaimer</h4>
+					<p class="fragment fade-up">I'm not an expert'</p>
+					<p class="fragment fade-up">I don't know everything</p>
+					<p class="fragment fade-up">Ask questions</p>
+					<p class="fragment fade-up">Maybe I'm able to reply</p>
+					<p class="fragment fade-up">Google it in other case, 😉</p>
+				</section>
+				<section>
+					<h2>Clang Tools</h2>
 					<p class="fragment fade-up" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="6">Clang Format<span></p>
 					<p class="fragment fade-up" data-fragment-index="2">Clang Tidy</p>
 					<p class="fragment fade-up" data-fragment-index="3">Sanitizers</p>
@@ -193,7 +202,7 @@ if (something === 'something') {
 					<p>Sanitizers are not properly tools</p>
 					<p>Embedded with the compiler</p>
 					<p>Run dynamic analisys</p>
-					<p>Perfect to run with Unit tests on CI<p>
+					<p>Perfect to run with tests on the CI<p>
 				</section>	
 				<section>
 					<h3>Sanitizers</h3>
@@ -219,11 +228,13 @@ int main(int argc, char **argv) {
 					<pre><code data-trim data-noescape>
 						clang -fsanitize=thread -g -O1 tiny_race.c
 					</code></pre>
-					<h4>Memory sanitizer</h4>
-					<p>Typical slowdown introduced is 3x.</p>
-					<pre><code data-trim data-noescape>
-						clang -fsanitize=memory -fno-omit-frame-pointer -g -O2 umr.cc
-					</code></pre>
+					<span class="fragment fade-up">
+						<h4>Memory sanitizer</h4>
+						<p>Typical slowdown introduced is 3x.</p>
+						<pre><code data-trim data-noescape>
+							clang -fsanitize=memory -fno-omit-frame-pointer -g -O2 umr.cc
+						</code></pre>
+					</span>
 				</section>
 				<section>
 					<h3>Sanitizers</h3>
@@ -233,8 +244,10 @@ int main(int argc, char **argv) {
 					<pre><code data-trim data-noescape>
 						clang++ -fsanitize=undefined test.cc
 					</code></pre>
-					<h4>Data Flow sanitizer</h4>
-					<p>Unlike other Sanitizer tools, this tool is not designed to detect a specific class of bugs on its own</p>
+					<span class="fragment fade-up">
+						<h4>Data Flow sanitizer</h4>
+						<p>Unlike other Sanitizer tools, this tool is not designed to detect a specific class of bugs on its own</p>
+					</span>
 				</section>
 				<section>
 					<h2>Clang Tools</h2>
@@ -260,6 +273,52 @@ int main(int argc, char **argv) {
 				</section>
 				<section>
 					<h3>Automate it & CI</h3>
+					<p>Scripts, Jenkins, Travis, Gitlab, ...</p>
+					<p>There is toons of ways to automate</p>
+					<p>Choose yours, we don't have time to dig into</p>
+					<span class="fragment fade-up">
+						<p>May after, with the 🍻🍺🍻 time</p>
+						<p>Any voulunteer for a CI talk?</p>
+					</span>
+				</section>
+				<section>
+					<h3>Automate it & CI</h3>
+					<h4>Clang format</h4>
+					<p>No more discussions on format on a PR</p>
+					<p>Automate formating, save your time, have nice code</p>
+					<p>One .clang-format file for all, one per repo, decide...</p>
+					<p>Just use it and forget waste time discussions</p>
+					<span class="fragment fade-up">
+						<p>Configurator tools, again, just discuss the format</p>
+						<p><a href="https://clangformat.com/" target="_blank">https://clangformat.com/</a></p>
+						<p><a href="https://zed0.co.uk/clang-format-configurator/" target="_blank">https://zed0.co.uk/clang-format-configurator/</a></p>
+					</span>
+				</section>
+				<section>
+					<h3>Automate it & CI</h3>
+					<h4>Clang tidy</h4>
+					<p>Start small, too many rules create too much noise</p>
+					<p>Decide the rules you want to start</p>
+					<p>Enable warning as errros on that rules on the CI</p>
+					<span class="fragment fade-up">
+						<p>Add more rules, clean the code, push</p>
+						<p>Remember, some rules are too noisy, ignore them</p>
+					</span>
+					<span class="fragment fade-up">
+						<p>Too many changes? Then try to apply autocoorect</p>
+						<p>Autocorrect, must pass code review, be carefull</p>
+					</span>
+				</section>
+				<section>
+					<h3>Automate it & CI</h3>
+					<h4>Sanitizers</h4>
+					<p>Easy, add to the tests</p>
+					<p>Yes, you should have unit tests, integration...</p>
+					<p>There a time consuming, be carefull, nightly builds?</p>
+					<span class="fragment fade-up">
+						<h4>Other tools</h4>
+						<p>Other tools, custom tools, add them to CI aslo</p>
+					</span>
 				</section>
 				<section>
 					<h1>Thanks</h1>
