@@ -30,14 +30,14 @@
 				</section>
 				<section data-background-image="../img/KingBrand_masterLogo_400X274.png" data-background-position="bottom 2em right 2em" data-background-size="25%">
 					<h2>Carlos Jimenez Rams</h2>
-					<p class="fragment fade-up">Worning at King Since January 2014</p>
+					<p class="fragment fade-up">Working at King Since January 2014</p>
 					<p class="fragment fade-up">Stockholm, Shanghai, Barcelona</p>
 					<p class="fragment fade-up">Stockholm C++ Meetup, Barcelona C++ Meetup</p>
 					<img class="img-circle" src="../img/cjrams.png">
 				</section>
 				<section>
 					<h2>Clang Tools</h2>
-					<p class="fragment fade-up"><a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">Presentation github</a><br>
+					<p class="fragment fade-up"><a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">Presentation on github</a><br>
 					https://cjrams.github.io/clang-tools.html<br>
 					Also on the meetup group 🤞</p>
 					<p class="fragment fade-up">Please, find the typos, and <a href="https://github.com/cjrams/cjrams.github.io/blob/master/presentations/presentation/clang-tools.html" target="_blank">contribute</a></p>
@@ -45,7 +45,7 @@
 				<section>
 					<h2>Clang Tools</h2>
 					<h4 class="fragment fade-up">Disclaimer</h4>
-					<p class="fragment fade-up">I'm not an expert'</p>
+					<p class="fragment fade-up">I'm not an expert</p>
 					<p class="fragment fade-up">I don't know everything</p>
 					<p class="fragment fade-up">Ask questions</p>
 					<p class="fragment fade-up">Maybe I'm able to reply</p>
@@ -142,7 +142,7 @@ EM_ASM_ARGS({if (something == = 'something') {})
 						</code></pre>
 					</span>					
 					<span class="fragment fade-up">
-						<p>Sollution</p>
+						<p>Solution</p>
 						<pre><code data-trim data-noescape>
 // clang-format off
 EM_ASM_ARGS({
@@ -164,9 +164,9 @@ if (something === 'something') {
 				<section>
 					<h3>Clang Tidy</h3>
 					<p class="fragment fade-up">Linter tool</p>
-					<span class="fragment fade-up"><p>Static analizer <span class="fragment fade-up">😅</span> <span class="fragment fade-up">also, some with <br><pre class="fragment fade-up"><code data-trim data-noescape>clang-analyzer-*</span></code></pre></p></span>
+					<span class="fragment fade-up"><p>Static analyzer <span class="fragment fade-up">😅</span> <span class="fragment fade-up">also, some with <br><pre class="fragment fade-up"><code data-trim data-noescape>clang-analyzer-*</span></code></pre></p></span>
 					<p class="fragment fade-up">Best practices</p>
-					<span class="fragment fade-up"><p>Including cpp gidelines with <br><pre class="fragment fade-up"><code data-trim data-noescape>cppcoreguidelines-*</code></pre></p></span>
+					<span class="fragment fade-up"><p>Including cpp guidelines with <br><pre class="fragment fade-up"><code data-trim data-noescape>cppcoreguidelines-*</code></pre></p></span>
 				</section>
 				<section>
 					<h3>Clang Tidy</h3>
@@ -181,7 +181,7 @@ if (something === 'something') {
 				</section>
 				<section>
 					<h3>Clang Tidy</h3>
-					<span class="fragment fade-up"><p>Cmake to the rescue (Version 3.7.2+)<br><pre class="fragment fade-up"><code data-trim data-noescape>set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=*")</code></pre></p></span>
+					<span class="fragment fade-up"><p>CMake to the rescue (Version 3.7.2+)<br><pre class="fragment fade-up"><code data-trim data-noescape>set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=*")</code></pre></p></span>
  				</section>
 				<section>
 					<h3>Clang Tidy</h3>
@@ -201,7 +201,7 @@ if (something === 'something') {
 					<h3>Sanitizers</h3>
 					<p>Sanitizers are not properly tools</p>
 					<p>Embedded with the compiler</p>
-					<p>Run dynamic analisys</p>
+					<p>Run dynamic analysis</p>
 					<p>Perfect to run with tests on the CI<p>
 				</section>	
 				<section>
@@ -238,7 +238,7 @@ int main(int argc, char **argv) {
 				</section>
 				<section>
 					<h3>Sanitizers</h3>
-					<h4>Undefined Behaviour sanitizer</h4>
+					<h4>Undefined Behavior sanitizer</h4>
 					<p>UndefinedBehaviorSanitizer (UBSan) is a fast undefined behavior detector</p>
 					<p>UBSan has an optional run-time library which provides better error reporting</p>
 					<pre><code data-trim data-noescape>
@@ -274,11 +274,11 @@ int main(int argc, char **argv) {
 				<section>
 					<h3>Automate it & CI</h3>
 					<p>Scripts, Jenkins, Travis, Gitlab, ...</p>
-					<p>There is toons of ways to automate</p>
+					<p>There is tons of ways to automate</p>
 					<p>Choose yours, we don't have time to dig into</p>
 					<span class="fragment fade-up">
 						<p>May after, with the 🍻🍺🍻 time</p>
-						<p>Any voulunteer for a CI talk?</p>
+						<p>Any volunteer for a CI talk?</p>
 					</span>
 				</section>
 				<section>
@@ -299,14 +299,14 @@ int main(int argc, char **argv) {
 					<h4>Clang tidy</h4>
 					<p>Start small, too many rules create too much noise</p>
 					<p>Decide the rules you want to start</p>
-					<p>Enable warning as errros on that rules on the CI</p>
+					<p>Enable warning as errors on that rules on the CI</p>
 					<span class="fragment fade-up">
 						<p>Add more rules, clean the code, push</p>
 						<p>Remember, some rules are too noisy, ignore them</p>
 					</span>
 					<span class="fragment fade-up">
-						<p>Too many changes? Then try to apply autocoorect</p>
-						<p>Autocorrect, must pass code review, be carefull</p>
+						<p>Too many changes? Then try to apply auto correct</p>
+						<p>Auto correct, must pass code review, be careful</p>
 					</span>
 				</section>
 				<section>
@@ -314,10 +314,10 @@ int main(int argc, char **argv) {
 					<h4>Sanitizers</h4>
 					<p>Easy, add to the tests</p>
 					<p>Yes, you should have unit tests, integration...</p>
-					<p>There a time consuming, be carefull, nightly builds?</p>
+					<p>There a time consuming, be careful, nightly builds?</p>
 					<span class="fragment fade-up">
 						<h4>Other tools</h4>
-						<p>Other tools, custom tools, add them to CI aslo</p>
+						<p>Other tools, custom tools, add them to CI also</p>
 					</span>
 				</section>
 				<section>
