@@ -183,7 +183,7 @@ if (something === 'something') {
 				<section>
 					<h3>Clang Tidy</h3>
 					<span class="fragment fade-up"><p>CMake to the rescue (Version 3.7.2+)<br><pre class="fragment fade-up"><code data-trim data-noescape>set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=*")</code></pre></p></span>
- 				</section>
+				</section>
 				<section>
 					<h3>Clang Tidy</h3>
 				</section>
@@ -260,11 +260,48 @@ int main(int argc, char **argv) {
 				</section>
 				<section>
 					<h3>AST matchers</h3>
+					<p>Abstract Syntax Tree</p>
+					<p>Clang/LLVM was designed to create tools</p>
+					<p>AST matchers aloud find specific elements</p>
+					<p>Kind of a query language, example:</p>
+					<pre><code data-trim data-noescape>
+recordDecl(hasDescendant(
+	ifStmt(hasTrueExpression(
+		expr(hasDescendant(
+			ifStmt()))))))
+					</code></pre>
+					<p>Regular expressions, can't be as precise, due language complexity, preprocessor, class function, parameter order, etc</p>
+				</section>
+				<section>
+					<h3>AST matchers</h3>
+					<p>Using AST matchers you can extend tools. clang-tidy:</p>
+					<pre><code data-trim data-noescape>
+void MyFirstCheckCheck::registerMatchers(MatchFinder *Finder) {
+	
+	auto nonAwesomeFunction = functionDecl(
+		unless(matchesName("^::awesome_"))
+	);
+ 
+	Finder->addMatcher(
+		nonAwesomeFunction.bind("addAwesomePrefix")
+		, this);
+ 
+	Finder->addMatcher(
+		callExpr(callee(nonAwesomeFunction)).
+		bind("addAwesomePrefix"), this);
+}
+					</code></pre>
+					<p>And few more things, then recompile clang-tidy with your new check and fix (optional), the use it as regular</p>
 				</section>
 				<section>
 					<h3>Other tools</h3>
-				</section>
-				<section>
+					<p>clang-include-fixer: Fix missing includes</p>
+					<p>clang-rename: Rename classes, functions, ...</p>
+					<p>clangd: Auto complete, code errors...<br> can be used on vim, vs-code,...</p>
+					<p>clang-doc: doxygen replacement</p>
+					<p>clang-query: To check AST matchers</p>
+					<p>clang-more:For real, there is more tools</p>
+				</section>				<section>
 					<h2>Clang Tools</h2>
 					<p>Clang Format</p>
 					<p>Clang Tidy</p>
@@ -357,15 +394,7 @@ int main(int argc, char **argv) {
 				keyboard: true,
 			});
 			Reveal.configure({ 
-				slideNumber: 'c/t',
-				keyboard: {
-					48: slide( 0 ),
-					49: slide( 5 ),
-					50: slide( 17 ),
-					51: slide( 28 ),
-					52: slide( 29 ),
-					56: slide( 30 ),
-				}
+				slideNumber: 'c/t'
 			}); 
 		</script>
 	</body>
