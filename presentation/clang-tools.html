@@ -28,7 +28,8 @@
 				<section>
 					<h1>Clang Tools</h1>
 				</section>
-				<section data-background-image="../img/KingBrand_masterLogo_400X274.png" data-background-position="bottom 2em right 2em" data-background-size="25%">
+				<section data-background-image="../img/KingBrand_masterLogo_400X274.png" 
+					data-background-position="bottom 2em right 2em" data-background-size="25%">
 					<h2>Carlos Jimenez Rams</h2>
 					<p class="fragment fade-up">Working at King Since January 2014</p>
 					<p class="fragment fade-up">Stockholm, Shanghai, Barcelona</p>
@@ -37,11 +38,23 @@
 				</section>
 				<section>
 					<h2>Clang Tools</h2>
-					<p class="fragment fade-up"><a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">Presentation on github</a> 
-					<a href="https://cjrams.github.io/presentations/presentation/clang-tools.html?print-pdf" target="_blank">(pdf version)</a> <br>
-					https://cjrams.github.io/clang-tools.html<br>
-					Also on the meetup group 🤞</p>
-					<p class="fragment fade-up">Please, find the typos, and <a href="https://github.com/cjrams/cjrams.github.io/blob/master/presentations/presentation/clang-tools.html" target="_blank">contribute</a></p>
+					<p class="fragment fade-up">
+						<a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">
+							Presentation on github
+						</a> 
+						<a href="https://cjrams.github.io/presentations/presentation/clang-tools.html?print-pdf" target="_blank">
+							(pdf version)
+						</a> <br>
+						https://cjrams.github.io/clang-tools.html<br>
+						Also on the meetup group 🤞
+					</p>
+					<p class="fragment fade-up">
+						Please, find the typos, and 
+						<a href="https://github.com/cjrams/cjrams.github.io/blob/master/presentations/presentation/clang-tools.html"
+							target="_blank">
+							contribute
+						</a>
+					</p>
 				</section>
 				<section>
 					<h2>Clang Tools</h2>
@@ -54,7 +67,11 @@
 				</section>
 				<section>
 					<h2>Clang Tools</h2>
-					<p class="fragment fade-up" data-fragment-index="1"><span class="fragment highlight-green" data-fragment-index="6">Clang Format<span></p>
+					<p class="fragment fade-up" data-fragment-index="1">
+						<span class="fragment highlight-green" data-fragment-index="6">
+							Clang Format
+						<span>
+					</p>
 					<p class="fragment fade-up" data-fragment-index="2">Clang Tidy</p>
 					<p class="fragment fade-up" data-fragment-index="3">Sanitizers</p>
 					<p class="fragment fade-up" data-fragment-index="4">AST matchers and other tools</p>
@@ -98,8 +115,10 @@ AlignConsecutiveAssignments: false
 					</span>
 					<span class="fragment fade-up"><p>Configurator tools</p>
 					<p><a href="https://clangformat.com/" target="_blank">https://clangformat.com/</a></p>
-					<p><a href="https://zed0.co.uk/clang-format-configurator/" target="_blank">https://zed0.co.uk/clang-format-configurator/</a></p>
-				</section>				
+					<p><a href="https://zed0.co.uk/clang-format-configurator/" target="_blank">
+						https://zed0.co.uk/clang-format-configurator/
+					</a></p>
+				</section>
 				<section>
 					<h3>Clang Format</h3>
 					<span class="fragment fade-up">
@@ -165,9 +184,24 @@ if (something === 'something') {
 				<section>
 					<h3>Clang Tidy</h3>
 					<p class="fragment fade-up">Linter tool</p>
-					<span class="fragment fade-up"><p>Static analyzer <span class="fragment fade-up">😅</span> <span class="fragment fade-up">also, some with <br><pre class="fragment fade-up"><code data-trim data-noescape>clang-analyzer-*</span></code></pre></p></span>
+					<span class="fragment fade-up">
+						<p>Static analyzer 
+							<span class="fragment fade-up">😅</span> 
+							<span class="fragment fade-up">also, some with <br>
+								<pre class="fragment fade-up"><code data-trim data-noescape>
+									clang-analyzer-*
+								</code></pre>
+							</span>
+						</p>
+					</span>
 					<p class="fragment fade-up">Best practices</p>
-					<span class="fragment fade-up"><p>Including cpp guidelines with <br><pre class="fragment fade-up"><code data-trim data-noescape>cppcoreguidelines-*</code></pre></p></span>
+					<span class="fragment fade-up">
+						<p>Including cpp guidelines with <br>
+							<pre class="fragment fade-up"><code data-trim data-noescape>
+								cppcoreguidelines-*
+							</code></pre>
+						</p>
+					</span>
 				</section>
 				<section>
 					<h3>Clang Tidy</h3>
@@ -182,7 +216,10 @@ if (something === 'something') {
 				</section>
 				<section>
 					<h3>Clang Tidy</h3>
-					<span class="fragment fade-up"><p>CMake to the rescue (Version 3.7.2+)<br><pre class="fragment fade-up"><code data-trim data-noescape>set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=*")</code></pre></p></span>
+					<span class="fragment fade-up"><p>CMake to the rescue (Version 3.7.2+)
+					<br><pre class="fragment fade-up"><code data-trim data-noescape>
+					set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=*")
+					</code></pre></p></span>
 				</section>
 				<section>
 					<h3>Clang Tidy</h3>
@@ -215,9 +252,9 @@ if (something === 'something') {
 					</code></pre>
 					<pre><code data-trim data-noescape>
 int main(int argc, char **argv) {
-  int *array = new int[100];
-  delete [] array;
-  return array[argc];  // BOOM
+	int *array = new int[100];
+	delete [] array;
+	return array[argc]; // BOOM
 }
 					</code></pre>
 				</section>
@@ -247,7 +284,10 @@ int main(int argc, char **argv) {
 					</code></pre>
 					<span class="fragment fade-up">
 						<h4>Data Flow sanitizer</h4>
-						<p>Unlike other Sanitizer tools, this tool is not designed to detect a specific class of bugs on its own</p>
+						<p>
+							Unlike other Sanitizer tools, this tool is not designed to detect a 
+							specific class of bugs on its own
+						</p>
 					</span>
 				</section>
 				<section>
@@ -270,7 +310,10 @@ recordDecl(hasDescendant(
 		expr(hasDescendant(
 			ifStmt()))))))
 					</code></pre>
-					<p>Regular expressions, can't be as precise, due language complexity, preprocessor, class function, parameter order, etc</p>
+					<p>
+						Regular expressions, can't be as precise, due language complexity, 
+						preprocessor, class function, parameter order, etc
+					</p>
 				</section>
 				<section>
 					<h3>AST matchers</h3>
@@ -291,7 +334,10 @@ void MyFirstCheckCheck::registerMatchers(MatchFinder *Finder) {
 		bind("addAwesomePrefix"), this);
 }
 					</code></pre>
-					<p>And few more things, then recompile clang-tidy with your new check and fix (optional), the use it as regular</p>
+					<p>
+						And few more things, then recompile clang-tidy with your 
+						new check and fix (optional), the use it as regular
+					</p>
 				</section>
 				<section>
 					<h3>Other tools</h3>
@@ -301,7 +347,8 @@ void MyFirstCheckCheck::registerMatchers(MatchFinder *Finder) {
 					<p>clang-doc: doxygen replacement</p>
 					<p>clang-query: To check AST matchers</p>
 					<p>clang-more:For real, there is more tools</p>
-				</section>				<section>
+				</section>
+				<section>
 					<h2>Clang Tools</h2>
 					<p>Clang Format</p>
 					<p>Clang Tidy</p>
@@ -329,7 +376,9 @@ void MyFirstCheckCheck::registerMatchers(MatchFinder *Finder) {
 					<span class="fragment fade-up">
 						<p>Configurator tools, again, just discuss the format</p>
 						<p><a href="https://clangformat.com/" target="_blank">https://clangformat.com/</a></p>
-						<p><a href="https://zed0.co.uk/clang-format-configurator/" target="_blank">https://zed0.co.uk/clang-format-configurator/</a></p>
+						<p><a href="https://zed0.co.uk/clang-format-configurator/" target="_blank">
+							https://zed0.co.uk/clang-format-configurator/
+						</a></p>
 					</span>
 				</section>
 				<section>
@@ -369,10 +418,34 @@ void MyFirstCheckCheck::registerMatchers(MatchFinder *Finder) {
 				</section>
 				<section>
 					<h2>Reference</h2>
-					<p class="fragment fade-up"><a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">Presentation on github</a> 
-					<a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">(pdf version)</a><br>
-					https://cjrams.github.io/clang-tools.html</p>
-					<p class="fragment fade-up">Please, find the typos, and <a href="https://github.com/cjrams/cjrams.github.io/blob/master/presentations/presentation/clang-tools.html" target="_blank">contribute</a></p>
+					<p>
+						<a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">	
+							Presentation on github
+						</a> 
+						<a href="https://cjrams.github.io/presentations/presentation/clang-tools.html" target="_blank">
+							(pdf version)
+						</a><br>
+						https://cjrams.github.io/clang-tools.html
+					</p>
+					<p>
+						Please, find the typos, and 
+						<a href="https://github.com/cjrams/cjrams.github.io/blob/master/presentations/presentation/clang-tools.html"
+							target="_blank">
+							contribute
+						</a>
+					</p>
+					<p>
+						Demos (if we have some time for it)<br>
+						<a href="https://github.com/cjrams/clang-tools-demo" target="_blank">
+							https://github.com/cjrams/clang-tools-demo
+						</a>
+					</p>
+					<p>
+						Reference information<br>
+						<a href="https://github.com/cjrams/clang-tools-demo/blob/master/reference.md" target="_blank">	
+							https://github.com/cjrams/clang-tools-demo/blob/master/reference.md
+						</a>
+					</p>
 				</section>
 			</div>
 		</div>
