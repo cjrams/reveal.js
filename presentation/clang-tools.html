@@ -215,11 +215,21 @@ if (something === 'something') {
 					clang-tidy test.cpp -checks=-*,clang-analyzer-*,
 						-clang-analyzer-cplusplus*
 					</code></pre></span></p>
-					<p class="fragment fade-up">Plus compilation library 🤞</p>
+					<p class="fragment fade-up">Plus compilation database 🤞</p>
 				</section>
 				<section>
 					<h3>Clang Tidy</h3>
-					<h4>Compilation library</h4>
+					<h4>Compilation database</h4>
+					<pre><code data-trim data-noescape>
+						-DCMAKE_EXPORT_COMPILE_COMMANDS=True
+					</code></pre>
+					<p>A compilation database is a JSON file, which consists 
+						of an array of “command objects”, where each command
+						object specifies one way a translation unit is compiled
+						in the project. Each command object contains the
+						translation unit’s main file, the working directory
+						of the compile run and the actual compile command. 
+					</p>
 				</section>
 				<section>
 					<h3>Clang Tidy</h3>
