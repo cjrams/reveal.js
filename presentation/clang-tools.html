@@ -270,40 +270,40 @@ if (something === 'something') {
 						<li>cppcoreguidelines-	Checks related to C++ Core Guidelines.</li>
 						<li>misc-	Checks that we didn’t have a better category for.</li>
 						<li>performance-	Checks that target performance-related issues.</li>
+						<li>modernize-	Checks that advocate usage of modern (currently 
+							“modern” means “C++11”) language constructs. </li>
 					</ul>
 				</section>
 				<section>
 					<h3>Clang Tidy</h3>
 					<h5>Nice ones</h5>
 					<ul>
-						<li>modernize-	Checks that advocate usage of modern (currently 
-							“modern” means “C++11”) language constructs. </li>
 						<li>portability-	Checks that target portability-related issues
 							that don’t relate to any particular coding style.</li>
 						<li>readability-	Checks that target readability-related issues
 							that don’t relate to any particular coding style.</li>
-					</ul>
-				</section>
-				<section>
-					<h3>Clang Tidy</h3>
-					<h5>Trully optional</h5>
-					<ul>
-						<li>abseil-	Checks related to Abseil library.</li>
-						<li>android-	Checks related to Android.</li>
-						<li>boost-	Checks related to Boost library.</li>
 						<li>cert-	Checks related to CERT Secure Coding Guidelines.</li>
-						<li>fuchsia-	Checks related to Fuchsia coding conventions.</li>
-						<li>google-	Checks related to Google coding conventions.</li>
+						<li>mpi-	Checks related to MPI (Message Passing Interface).</li>
 					</ul>
 				</section>
 				<section>
 					<h3>Clang Tidy</h3>
-					<h5>Trully optional</h5>
+					<h5>Optionals</h5>
 					<ul>
-						<li>llvm-	Checks related to the LLVM coding conventions.</li>
-						<li>mpi-	Checks related to MPI (Message Passing Interface).</li>
 						<li>objc-	Checks related to Objective-C coding conventions.</li>
 						<li>openmp-	Checks related to OpenMP API.</li>
+						<li>android-	Checks related to Android.</li>
+						<li>boost-	Checks related to Boost library.</li>
+						<li>llvm-	Checks related to the LLVM coding conventions.</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Clang Tidy</h3>
+					<h5>Trully optionals</h5>
+					<ul>
+						<li>abseil-	Checks related to Abseil library.</li>
+						<li>fuchsia-	Checks related to Fuchsia coding conventions.</li>
+						<li>google-	Checks related to Google coding conventions.</li>
 						<li>zircon-	Checks related to Zircon kernel coding conventions.</li>
 					</ul>
 				</section>
@@ -319,12 +319,11 @@ if (something === 'something') {
 								hicpp-*, -hicpp-special-member-functions,
 								-hicpp-uppercase-literal-suffix")
 							set_target_properties(
-							${package_name}
-							PROPERTIES
-								CXX_CLANG_TIDY
+								${package_name}
+								PROPERTIES CXX_CLANG_TIDY
 								"clang-tidy;-header-filter=${CMAKE_CURRENT_LIST_DIR}/.;
 								-checks=${CLANG_TIDY_CHECKS};
-								-warnings-as-errors=*;"
+								-warnings-as-errors=*;")
 						</code></pre>
 					</p>
 				</section>
